@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <div id="cursor">
+    <div class="dot"></div>
+    <div class="ring"></div>
+  </div>
+
+  <nav id="navbar">
+    <a class="nav-logo" href="#"><span>&lt;</span>Portafolio<span>/&gt;</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">sobre-mí</a></li>
+      <li><a href="#projects">proyectos</a></li>
+      <li><a href="#experience">experiencia</a></li>
+    </ul>
+  </nav>
+  <section id="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-content">
+      <p class="hero-tag">Disponible para proyectos</p>
+      <h1>
+        <span class="line"><span>Hola, soy</span></span>
+        <span class="line"><span>Pablo Cocio</span></span>
+        <span class="line"><span>Dev Frontend</span></span>
+      </h1>
+      <p class="hero-desc">
+        Construyo experiencias digitales rápidas, accesibles y con un diseño que la gente recuerda.
+        Especializado en React, Node.js.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#projects">Ver proyectos →</a>
+        <a class="btn btn-outline" href="#contact">Contactar</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="code-window">
+        <div class="code-bar">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="code-line"><span class="kw">const</span> <span class="fn">developer</span> <span class="punct">=
+            {</span></div>
+        <div class="code-line">&nbsp;&nbsp;<span class="str">nombre</span><span class="punct">:</span> <span
+            class="str">"Alex García"</span><span class="punct">,</span></div>
+        <div class="code-line">&nbsp;&nbsp;<span class="str">rol</span><span class="punct">:</span> <span
+            class="str">"Full Stack Dev"</span><span class="punct">,</span></div>
+        <div class="code-line">&nbsp;&nbsp;<span class="str">stack</span><span class="punct">: [</span><span
+            class="str">"React"</span><span class="punct">,</span> <span class="str">"Node"</span><span
+            class="punct">],</span></div>
+        <div class="code-line">&nbsp;&nbsp;<span class="str">años_exp</span><span class="punct">:</span> <span
+            class="num">5</span><span class="punct">,</span></div>
+        <div class="code-line">&nbsp;&nbsp;<span class="str">café_por_día</span><span class="punct">:</span>
+          <span class="num">3</span><span class="punct">,</span>
+        </div>
+        <div class="code-line"><span class="punct">}</span></div>
+        <br>
+        <div class="code-line typing"><span class="fn">developer</span><span class="punct">.</span><span
+            class="fn">construir</span><span class="punct">(</span><span class="str">"tu idea"</span><span
+            class="punct">)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <a href="https://github.com/tuusuario" target="_blank" class="social-link">
+    <i class="fab fa-github"></i> GitHub
+  </a>
+
+  <a href="https://instagram.com/tuusuario" target="_blank" class="social-link">
+    <i class="fab fa-instagram"></i> Instagram
+  </a>
+
+  <section id="about">
+    <p class="section-label reveal">// sobre mí</p>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>Desarrollador enfocado en construir experiencias digitales que no solo funcionen bien, sino que también se
+          sientan bien. Me especializo en transformar ideas en productos sólidos, cuidando cada detalle desde la lógica.
+        </p>
+
+        <p>Fuera del mundo del desarrollo, encuentro inspiración explorando la naturaleza, aprendiendo sobre sistemas
+          distribuidos y perfeccionando el arte del café de especialidad.</p>
+
+
+      </div>
+      <div class="skills-grid reveal">
+        <div class="skill-pill"><span class="skill-dot"></span>JavaScript / TypeScript</div>
+        <div class="skill-pill"><span class="skill-dot"></span>React / Next.js</div>
+        <div class="skill-pill"><span class="skill-dot"></span>html / Css</div>
+      </div>
+    </div>
+  </section>
+  <section id="projects">
+    <p class="section-label reveal">// proyectos</p>
+    <h2 class="section-title reveal">Trabajo selecto</h2>
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <p class="project-num">001</p>
+        <span class="project-arrow">↗</span>
+        <h3 class="project-name">Fintrack Dashboard</h3>
+        <p class="project-desc">Plataforma de gestión financiera personal con visualizaciones en tiempo real y
+          predicciones por IA.</p>
+        <div class="project-tags">
+          <span class="tag">React</span>
+          <span class="tag">D3.js</span>
+          <span class="tag">Python</span>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <p class="project-num">002</p>
+        <span class="project-arrow">↗</span>
+        <h3 class="project-name">EcoShop</h3>
+        <p class="project-desc">E-commerce para marcas sostenibles con huella de carbono calculada por producto y
+          pasarela de pago integrada.</p>
+        <div class="project-tags">
+          <span class="tag">Next.js</span>
+          <span class="tag">Stripe</span>
+          <span class="tag">Prisma</span>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <p class="project-num">003</p>
+        <span class="project-arrow">↗</span>
+        <h3 class="project-name">DevCollab</h3>
+        <p class="project-desc">Herramienta de colaboración para equipos remotos con editor de código en tiempo real y
+          video integrado.</p>
+        <div class="project-tags">
+          <span class="tag">WebSockets</span>
+          <span class="tag">WebRTC</span>
+          <span class="tag">Node.js</span>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <p class="project-num">004</p>
+        <span class="project-arrow">↗</span>
+        <h3 class="project-name">NomadMap</h3>
+        <p class="project-desc">App para nómadas digitales: espacios de coworking, velocidad de internet y reseñas
+          verificadas por ciudad.</p>
+        <div class="project-tags">
+          <span class="tag">React Native</span>
+          <span class="tag">Mapbox</span>
+          <span class="tag">Firebase</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <p class="section-label reveal">// experiencia</p>
+    <h2 class="section-title reveal">Trayectoria</h2>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <p class="timeline-date">2022 — Presente</p>
+        <h3 class="timeline-title">Senior Frontend Engineer</h3>
+        <p class="timeline-company">Startups Tech — Santiago, Chile</p>
+        <p class="timeline-desc">Lideré la migración de una app monolítica a microfrontends, reduciendo el tiempo de
+          carga en un 60% y mejorando la DX del equipo.</p>
+      </div>
+      <div class="timeline-item reveal">
+        <p class="timeline-date">2020 — 2022</p>
+        <h3 class="timeline-title">Full Stack Developer</h3>
+        <p class="timeline-company">Agencia Digital Wave — Remoto</p>
+        <p class="timeline-desc">Desarrollé más de 15 productos para clientes en LATAM y Europa, desde MVPs hasta
+          plataformas con más de 100k usuarios activos.</p>
+      </div>
+      <div class="timeline-item reveal">
+        <p class="timeline-date">2019 — 2020</p>
+        <h3 class="timeline-title">Junior Developer</h3>
+        <p class="timeline-company">Freelance</p>
+        <p class="timeline-desc">Primeros proyectos: sitios web, dashboards y automatizaciones para PYMEs locales. Aquí
+          nació el amor por el código limpio.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Alex García</p>
+    <p>Hecho con código y ☕</p>
+  </footer>
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>
