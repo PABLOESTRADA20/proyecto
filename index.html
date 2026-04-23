@@ -1,28 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Pablo Cocio — Dev Frontend</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@300;400;500&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
+
   <div id="cursor">
     <div class="dot"></div>
     <div class="ring"></div>
   </div>
 
+  <!-- NAV -->
   <nav id="navbar">
-    <a class="nav-logo" href="#"><span>&lt;</span>Portafolio<span>/&gt;</span></a>
+    <a class="nav-logo" href="#"><span>&lt;</span>pcocio<span>/&gt;</span></a>
     <ul class="nav-links">
       <li><a href="#about">sobre-mí</a></li>
       <li><a href="#projects">proyectos</a></li>
       <li><a href="#experience">experiencia</a></li>
+      <li><a href="#skills">stack</a></li>
     </ul>
   </nav>
+
+  <!-- HERO -->
   <section id="hero">
     <div class="hero-bg-grid"></div>
     <div class="hero-content">
@@ -34,7 +42,7 @@
       </h1>
       <p class="hero-desc">
         Construyo experiencias digitales rápidas, accesibles y con un diseño que la gente recuerda.
-        Especializado en React, Node.js.
+        Especializado en React y Node.js.
       </p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#projects">Ver proyectos →</a>
@@ -43,150 +51,241 @@
     </div>
     <div class="hero-visual">
       <div class="code-window">
-        <div class="code-bar">
-          <span></span><span></span><span></span>
-        </div>
+        <div class="code-bar"><span></span><span></span><span></span></div>
         <div class="code-line"><span class="kw">const</span> <span class="fn">developer</span> <span class="punct">=
             {</span></div>
         <div class="code-line">&nbsp;&nbsp;<span class="str">nombre</span><span class="punct">:</span> <span
-            class="str">"Alex García"</span><span class="punct">,</span></div>
+            class="str">"Pablo Cocio"</span><span class="punct">,</span></div>
         <div class="code-line">&nbsp;&nbsp;<span class="str">rol</span><span class="punct">:</span> <span
-            class="str">"Full Stack Dev"</span><span class="punct">,</span></div>
+            class="str">"Frontend Dev"</span><span class="punct">,</span></div>
         <div class="code-line">&nbsp;&nbsp;<span class="str">stack</span><span class="punct">: [</span><span
-            class="str">"React"</span><span class="punct">,</span> <span class="str">"Node"</span><span
+            class="str">"React"</span><span class="punct">,</span> <span class="str">"Next.js"</span><span
             class="punct">],</span></div>
         <div class="code-line">&nbsp;&nbsp;<span class="str">años_exp</span><span class="punct">:</span> <span
-            class="num">5</span><span class="punct">,</span></div>
-        <div class="code-line">&nbsp;&nbsp;<span class="str">café_por_día</span><span class="punct">:</span>
-          <span class="num">3</span><span class="punct">,</span>
-        </div>
+            class="num">2</span><span class="punct">,</span></div>
+        <div class="code-line">&nbsp;&nbsp;<span class="str">Monster</span><span class="punct">:</span> <span
+            class="num">3</span><span class="punct">,</span></div>
         <div class="code-line"><span class="punct">}</span></div>
         <br>
-        <div class="code-line typing"><span class="fn">developer</span><span class="punct">.</span><span
+        <div class="code-line typing-hero"><span class="fn">developer</span><span class="punct">.</span><span
             class="fn">construir</span><span class="punct">(</span><span class="str">"tu idea"</span><span
             class="punct">)</span></div>
       </div>
     </div>
   </section>
 
-  <a href="https://github.com/tuusuario" target="_blank" class="social-link">
-    <i class="fab fa-github"></i> GitHub
-  </a>
-
-  <a href="https://instagram.com/tuusuario" target="_blank" class="social-link">
-    <i class="fab fa-instagram"></i> Instagram
-  </a>
-
+  <!-- ══════════════════════════════════════════
+       SECCIÓN SOBRE MÍ — INTERACTIVA
+  ══════════════════════════════════════════ -->
   <section id="about">
+
     <p class="section-label reveal">// sobre mí</p>
-    <div class="about-grid">
-      <div class="about-text reveal">
-        <p>Desarrollador enfocado en construir experiencias digitales que no solo funcionen bien, sino que también se
-          sientan bien. Me especializo en transformar ideas en productos sólidos, cuidando cada detalle desde la lógica.
-        </p>
 
-        <p>Fuera del mundo del desarrollo, encuentro inspiración explorando la naturaleza, aprendiendo sobre sistemas
-          distribuidos y perfeccionando el arte del café de especialidad.</p>
+    <!-- FRASE TYPING ──────────────────────────────── -->
+    <div class="about-typing-wrap reveal">
+      <span class="about-typing-prefix">&gt;&nbsp;</span>
+      <span id="about-typing" class="about-typing-text"></span>
+      <span class="about-typing-cursor">▋</span>
+    </div>
 
+    <!-- FOTO + CARDS ──────────────────────────────── -->
+    <div class="about-main reveal">
 
+      <!-- Foto de perfil -->
+      <div class="about-photo">
+        <div class="photo-frame">
+          <img src="/img/WhatsApp Image 2026-04-22 at 13.08.35.jpeg" alt="Pablo Cocio" id="profile-photo" />
+          <div class="photo-badge"><span class="badge-dot"></span>Disponible</div>
+        </div>
+        <label class="upload-btn" for="photo-upload">
+          <i class="fas fa-camera"></i> Cambiar foto
+          <input type="file" id="photo-upload" accept="image/*" hidden>
+        </label>
       </div>
-      <div class="skills-grid reveal">
-        <div class="skill-pill"><span class="skill-dot"></span>JavaScript / TypeScript</div>
-        <div class="skill-pill"><span class="skill-dot"></span>React / Next.js</div>
-        <div class="skill-pill"><span class="skill-dot"></span>html / Css</div>
+
+      <!-- Cards expandibles -->
+      <div class="about-cards">
+
+        <div class="acard" data-index="0">
+          <div class="acard-header">
+            <span class="acard-icon"><i class="fas fa-user"></i></span>
+            <span class="acard-title">Quién soy</span>
+            <span class="acard-chevron"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <div class="acard-body">
+            <p>Desarrollador enfocado en construir experiencias digitales que no solo funcionen bien, sino que también
+              se sientan bien. Me especializo en transformar ideas en productos sólidos.</p>
+            <div class="acard-stats">
+              <div class="acard-stat"><span class="acard-num">1+</span><span class="acard-label">año exp.</span></div>
+              <div class="acard-stat"><span class="acard-num">4+</span><span class="acard-label">proyectos</span></div>
+              <div class="acard-stat"><span class="acard-num">80%</span><span class="acard-label">remoto</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="acard" data-index="1">
+          <div class="acard-header">
+            <span class="acard-icon"><i class="fas fa-code"></i></span>
+            <span class="acard-title">Cómo trabajo</span>
+            <span class="acard-chevron"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <div class="acard-body">
+            <p> Trabajo con ciclos cortos de feedback, iterando rápido sin sacrificar calidad.</p>
+            <div class="acard-tags">
+              <span>Agile</span><span>Code Review</span><span>TDD</span><span>CI/CD</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="acard" data-index="2">
+          <div class="acard-icon-wrap">
+            <span class="acard-icon"><i class="fas fa-mountain-sun"></i></span>
+          </div>
+          <div class="acard-header">
+            <span class="acard-icon"><i class="fas fa-mountain-sun"></i></span>
+            <span class="acard-title">Fuera del código</span>
+            <span class="acard-chevron"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <div class="acard-body">
+            <p>Exploro montañas, estudio Nuevos Lenguajes y hago dibujos con inspiracion . Creo que
+              las mejores ideas llegan lejos de la pantalla.</p>
+            <div class="acard-hobbies">
+              <span><i class="fas fa-hiking"></i> Trekking</span>
+              <span><i class="fas fa-coffee"></i> Café</span>
+              <span><i class="fas fa-book"></i> Lectura</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="acard" data-index="3">
+          <div class="acard-header">
+            <span class="acard-icon"><i class="fas fa-share-nodes"></i></span>
+            <span class="acard-title">Encuéntrame en</span>
+            <span class="acard-chevron"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <div class="acard-body">
+            <div class="acard-socials">
+              <a href="https://github.com/PABLOESTRADA20" target="_blank" class="acard-social github">
+                <i class="fab fa-github"></i>
+                <div><strong>GitHub</strong><span>github.com/PABLOESTRADA20</span></div>
+                <i class="fas fa-arrow-up-right-from-square acard-social-arrow"></i>
+              </a>
+              <a href="https://www.instagram.com/pablo_cocio" target="_blank" class="acard-social instagram">
+                <i class="fab fa-instagram"></i>
+                <div><strong>Instagram</strong><span>@pablo_cocio</span></div>
+                <i class="fas fa-arrow-up-right-from-square acard-social-arrow"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /about-cards -->
+    </div><!-- /about-main -->
+
+  </section>
+  <!-- ══ FIN SOBRE MÍ ══ -->
+
+  <!-- EXPERIENCIA -->
+  <section id="experience">
+    <p class="section-label reveal">// experiencia</p>
+    <h2 class="section-title reveal">Trayectoria</h2>
+    <div class="experience-grid">
+
+      <div class="exp-card reveal">
+        <div class="exp-card-top">
+          <p class="exp-num">001</p>
+          <span class="exp-arrow">↗</span>
+        </div>
+        <p class="exp-date"> 2026</p>
+        <h3 class="exp-title">práctica </h3>
+        <p class="exp-company"><i class="fas fa-building"></i> Language Center — Santiago, Chile</p>
+        <p class="exp-desc">Arregle una app que no contenía frontend y mejore la experiencia del usuario.</p>
+        <div class="exp-tags">
+          <span class="tag">React</span>
+          <span class="tag">Next.js</span>
+          <span class="tag">TypeScript</span>
+        </div>
+        <span class="exp-badge exp-badge-active">Practica</span>
       </div>
+
+      <div class="exp-card reveal">
+        <div class="exp-card-top">
+          <p class="exp-num">002</p>
+          <span class="exp-arrow">↗</span>
+        </div>
+        <p class="exp-date">2024</p>
+        <h3 class="exp-title">diccionario con 4 idiomas</h3>
+        <p class="exp-company"><i class="fas fa-building"></i> Cmch Maristas-Santiago-Chile</p>
+        <p class="exp-desc">Desarrollé un diccionario y traducciones para 4 idiomas.</p>
+        <div class="exp-tags">
+          <span class="tag">HTML</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">CSS</span>
+        </div>
+      </div>
+
+      <div class="exp-card reveal">
+        <div class="exp-card-top">
+          <p class="exp-num">003</p>
+          <span class="exp-arrow">↗</span>
+        </div>
+        <p class="exp-date"> Presente </p>
+        <h3 class="exp-title">Junior Developer</h3>
+        <p class="exp-company"><i class="fas fa-laptop"></i> Freelance</p>
+        <p class="exp-desc">Creando una red social para diferentes plataformas.</p>
+        <div class="exp-tags">
+          <span class="tag">React</span>
+          <span class="tag">Next.js</span>
+          <span class="tag">TypeScript</span>
+        </div>
+        <span class="exp-badge exp-badge-active">Devsactum</span>
+      </div>
+
     </div>
   </section>
+
+  <!-- PROYECTOS -->
   <section id="projects">
     <p class="section-label reveal">// proyectos</p>
     <h2 class="section-title reveal">Trabajo selecto</h2>
     <div class="projects-grid">
       <div class="project-card reveal">
-        <p class="project-num">001</p>
-        <span class="project-arrow">↗</span>
-        <h3 class="project-name">Fintrack Dashboard</h3>
-        <p class="project-desc">Plataforma de gestión financiera personal con visualizaciones en tiempo real y
-          predicciones por IA.</p>
-        <div class="project-tags">
-          <span class="tag">React</span>
-          <span class="tag">D3.js</span>
-          <span class="tag">Python</span>
-        </div>
+        <p class="project-num">001</p><span class="project-arrow">↗</span>
+        <h3 class="project-name">Biodiversidad</h3>
+        <p class="project-desc">Creacion de un frontend para visualizar datos de biodiversidad. y un dashboard
+          interactivo.</p>
+        <div class="project-tags"><span class="tag">React</span><span class="tag">Next.js</span></div>
       </div>
       <div class="project-card reveal">
-        <p class="project-num">002</p>
-        <span class="project-arrow">↗</span>
+        <p class="project-num">002</p><span class="project-arrow">↗</span>
         <h3 class="project-name">EcoShop</h3>
         <p class="project-desc">E-commerce para marcas sostenibles con huella de carbono calculada por producto y
           pasarela de pago integrada.</p>
-        <div class="project-tags">
-          <span class="tag">Next.js</span>
-          <span class="tag">Stripe</span>
-          <span class="tag">Prisma</span>
-        </div>
-      </div>
-      <div class="project-card reveal">
-        <p class="project-num">003</p>
-        <span class="project-arrow">↗</span>
-        <h3 class="project-name">DevCollab</h3>
-        <p class="project-desc">Herramienta de colaboración para equipos remotos con editor de código en tiempo real y
-          video integrado.</p>
-        <div class="project-tags">
-          <span class="tag">WebSockets</span>
-          <span class="tag">WebRTC</span>
-          <span class="tag">Node.js</span>
-        </div>
-      </div>
-      <div class="project-card reveal">
-        <p class="project-num">004</p>
-        <span class="project-arrow">↗</span>
-        <h3 class="project-name">NomadMap</h3>
-        <p class="project-desc">App para nómadas digitales: espacios de coworking, velocidad de internet y reseñas
-          verificadas por ciudad.</p>
-        <div class="project-tags">
-          <span class="tag">React Native</span>
-          <span class="tag">Mapbox</span>
-          <span class="tag">Firebase</span>
-        </div>
+        <div class="project-tags"><span class="tag">Next.js</span><span class="tag">React</span><span
+            class="tag">node.js</span></div>
       </div>
     </div>
   </section>
 
-  <section id="experience">
-    <p class="section-label reveal">// experiencia</p>
-    <h2 class="section-title reveal">Trayectoria</h2>
-    <div class="timeline">
-      <div class="timeline-item reveal">
-        <p class="timeline-date">2022 — Presente</p>
-        <h3 class="timeline-title">Senior Frontend Engineer</h3>
-        <p class="timeline-company">Startups Tech — Santiago, Chile</p>
-        <p class="timeline-desc">Lideré la migración de una app monolítica a microfrontends, reduciendo el tiempo de
-          carga en un 60% y mejorando la DX del equipo.</p>
-      </div>
-      <div class="timeline-item reveal">
-        <p class="timeline-date">2020 — 2022</p>
-        <h3 class="timeline-title">Full Stack Developer</h3>
-        <p class="timeline-company">Agencia Digital Wave — Remoto</p>
-        <p class="timeline-desc">Desarrollé más de 15 productos para clientes en LATAM y Europa, desde MVPs hasta
-          plataformas con más de 100k usuarios activos.</p>
-      </div>
-      <div class="timeline-item reveal">
-        <p class="timeline-date">2019 — 2020</p>
-        <h3 class="timeline-title">Junior Developer</h3>
-        <p class="timeline-company">Freelance</p>
-        <p class="timeline-desc">Primeros proyectos: sitios web, dashboards y automatizaciones para PYMEs locales. Aquí
-          nació el amor por el código limpio.</p>
-      </div>
+  <!-- SKILLS -->
+  <section id="skills">
+    <p class="section-label reveal">// habilidades</p>
+    <h2 class="section-title reveal">Stack tecnológico</h2>
+    <div class="skills-grid reveal">
+      <div class="skill-pill"><span class="skill-dot"></span>JavaScript / TypeScript</div>
+      <div class="skill-pill"><span class="skill-dot"></span>React / Next.js</div>
+      <div class="skill-pill"><span class="skill-dot"></span>HTML / CSS</div>
+      <div class="skill-pill"><span class="skill-dot"></span>Node.js</div>
+      <div class="skill-pill"><span class="skill-dot"></span>Git / GitHub</div>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Alex García</p>
-    <p>Hecho con código y ☕</p>
+    <p>© 2025 Pablo Cocio</p>
+    <p>Hecho con esfuerzo y ☕</p>
   </footer>
 
   <script src="main.js"></script>
-
 </body>
 
 </html>
