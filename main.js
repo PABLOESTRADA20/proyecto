@@ -2,11 +2,11 @@
 //  CURSOR
 // ════════════════════════════════════════════════════════════
 const cursor = document.getElementById('cursor');
-const dot    = cursor.querySelector('.dot');
-const ring   = cursor.querySelector('.ring');
+const dot = cursor.querySelector('.dot');
+const ring = cursor.querySelector('.ring');
 let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
 
-document.addEventListener('mousemove', function(e) {
+document.addEventListener('mousemove', function (e) {
   mouseX = e.clientX; mouseY = e.clientY;
   dot.style.left = mouseX + 'px'; dot.style.top = mouseY + 'px';
 });
@@ -18,9 +18,9 @@ function animateCursor() {
 }
 animateCursor();
 
-document.querySelectorAll('a, button, .project-card, .skill-pill, .contact-card, .acard').forEach(function(el) {
-  el.addEventListener('mouseenter', function() { document.body.classList.add('hovering'); });
-  el.addEventListener('mouseleave', function() { document.body.classList.remove('hovering'); });
+document.querySelectorAll('a, button, .project-card, .skill-pill, .contact-card, .acard').forEach(function (el) {
+  el.addEventListener('mouseenter', function () { document.body.classList.add('hovering'); });
+  el.addEventListener('mouseleave', function () { document.body.classList.remove('hovering'); });
 });
 
 
@@ -28,7 +28,7 @@ document.querySelectorAll('a, button, .project-card, .skill-pill, .contact-card,
 //  NAVBAR
 // ════════════════════════════════════════════════════════════
 var navbar = document.getElementById('navbar');
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
   navbar.classList.toggle('scrolled', window.scrollY > 50);
 });
 
@@ -36,8 +36,8 @@ window.addEventListener('scroll', function() {
 // ════════════════════════════════════════════════════════════
 //  SCROLL REVEAL (elementos genéricos con clase .reveal)
 // ════════════════════════════════════════════════════════════
-var revealObserver = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
+var revealObserver = new IntersectionObserver(function (entries) {
+  entries.forEach(function (entry) {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
       revealObserver.unobserve(entry.target);
@@ -45,7 +45,7 @@ var revealObserver = new IntersectionObserver(function(entries) {
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.reveal').forEach(function(el) {
+document.querySelectorAll('.reveal').forEach(function (el) {
   revealObserver.observe(el);
 });
 
@@ -65,19 +65,19 @@ var phrases = [
   'Disponible para tu próximo proyecto.'
 ];
 
-var typingEl   = document.getElementById('about-typing');
-var phraseIdx  = 0;   // índice de la frase actual
-var charIdx    = 0;   // índice del carácter actual dentro de la frase
+var typingEl = document.getElementById('about-typing');
+var phraseIdx = 0;   // índice de la frase actual
+var charIdx = 0;   // índice del carácter actual dentro de la frase
 var isDeleting = false;
-var typeSpeed  = 55;  // ms entre cada carácter al escribir
-var deleteSpeed= 28;  // ms entre cada carácter al borrar
-var pauseTime  = 2000;// ms de pausa cuando la frase está completa
+var typeSpeed = 55;  // ms entre cada carácter al escribir
+var deleteSpeed = 28;  // ms entre cada carácter al borrar
+var pauseTime = 2000;// ms de pausa cuando la frase está completa
 
 // La sección debe ser visible antes de arrancar el efecto.
 // Usamos IntersectionObserver para esperar que entre al viewport.
 var typingStarted = false;
 
-var typingObserver = new IntersectionObserver(function(entries) {
+var typingObserver = new IntersectionObserver(function (entries) {
   if (entries[0].isIntersecting && !typingStarted) {
     typingStarted = true;
     typeLoop();
@@ -112,7 +112,7 @@ function typeLoop() {
     if (charIdx === 0) {
       // Frase borrada → pasar a la siguiente
       isDeleting = false;
-      phraseIdx  = (phraseIdx + 1) % phrases.length;
+      phraseIdx = (phraseIdx + 1) % phrases.length;
       setTimeout(typeLoop, 400); // pequeña pausa antes de escribir la siguiente
       return;
     }
@@ -131,16 +131,16 @@ function typeLoop() {
 var cards = document.querySelectorAll('.acard');
 
 // Abrir la primera card automáticamente después de un momento
-setTimeout(function() {
+setTimeout(function () {
   if (cards[0]) cards[0].classList.add('open');
 }, 800);
 
-cards.forEach(function(card) {
-  card.addEventListener('click', function() {
+cards.forEach(function (card) {
+  card.addEventListener('click', function () {
     var isOpen = card.classList.contains('open');
 
     // Cerrar todas
-    cards.forEach(function(c) { c.classList.remove('open'); });
+    cards.forEach(function (c) { c.classList.remove('open'); });
 
     // Si la clickeada no estaba abierta, abrirla
     if (!isOpen) card.classList.add('open');
@@ -157,22 +157,22 @@ var photoInput = document.getElementById('photo-upload');
 var profileImg = document.getElementById('profile-photo');
 
 if (photoInput && profileImg) {
-  photoInput.addEventListener('change', function(e) {
+  photoInput.addEventListener('change', function (e) {
     var file = e.target.files[0];
     if (!file) return;
     var reader = new FileReader();
-    reader.onload = function(event) { profileImg.src = event.target.result; };
+    reader.onload = function (event) { profileImg.src = event.target.result; };
     reader.readAsDataURL(file);
   });
 }
 
 // Active nav highlight on scroll
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.bottom-nav a');
-    window.addEventListener('scroll', () => {
-      let cur = '';
-      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
-      navLinks.forEach(a => {
-        a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
-      });
-    });
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.bottom-nav a');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+  });
+});
