@@ -265,6 +265,55 @@
             class="tag">node.js</span></div>
       </div>
     </div>
+
+
+    <div class="auditor-banner reveal" id="auditorBanner">
+      <div class="auditor-banner-left">
+        <p class="auditor-eyebrow"> // Herramientas</p>
+        <p class="auditor-title">¿No sabes por dónde empezar?</p>
+        <p class="auditor-desc">Dime qué tipo de cliente buscas y te muestro qué proyectos ver primero — y cómo leerlos.
+        </p>
+      </div>
+      <button class="auditor-trigger" onclick="openAuditor()">
+        Auditar portafolio <span class="auditor-arrow">→</span>
+      </button>
+    </div>
+
+    <div class="auditor-panel" id="auditorPanel">
+      <div class="auditor-panel-header">
+        <p class="auditor-panel-label">// auditor de portafolio</p>
+        <button class="auditor-close" onclick="closeAuditor()">✕ cerrar</button>
+      </div>
+      <p class="auditor-panel-q">¿A qué tipo de cliente quieres atraer?</p>
+      <div class="client-grid">
+        <button class="client-btn" onclick="selectClient('statup')" data-id="statup">
+          <span class="client-icon">🚀</span>
+          <span class="client-label">Startup</span>
+          <span class="client-desc">MPV rapido, escala agil</span>
+        </button>
+        <button class="client-btn" onclick="selectClient('empresa')" data-id="empresa">
+          <span class="client-icon">🏢</span>
+          <span class="client-label">Corporativo</span>
+          <span class="client-desc">>Solidez, entregables</span>
+        </button>
+        <button class="client-btn" onclick="selectClient('pyme')" data-id="pyme">
+          <span class="client-icon">🛒</span>
+          <span class="client-label">PYME</span>
+          <span class="client-desc">E-commerce, web</span>
+        </button>
+        <button class="client-btn" onclick="selectClient('nomada')" data-id="nomada">
+          <span class="client-icon">🌍</span>
+          <span class="client-label">Remoto / Nómada</span>
+          <span class="client-desc">Trabajo global</span>
+        </button>
+        <button class="client-btn" onclick="selectClient('fintech')" data-id="fintech">
+          <span class="client-icon">💹</span>
+          <span class="client-label">Fintech / Datos</span>
+          <span class="client-desc">Finanzas, dashboards/span>
+        </button>
+      </div>
+      <div class="auditor-results" id="auditorResults"></div>
+    </div>
   </section>
 
   <!-- SKILLS -->
@@ -277,6 +326,20 @@
       <div class="skill-pill"><span class="skill-dot"></span>HTML / CSS</div>
       <div class="skill-pill"><span class="skill-dot"></span>Node.js</div>
       <div class="skill-pill"><span class="skill-dot"></span>Git / GitHub</div>
+    </div>
+  </section>
+
+    <section id="contact">
+    <p class="section-label reveal">// contacto</p>
+    <h2 class="section-title reveal">¿Trabajamos juntos?</h2>
+    <a href="mailto:pablo@ejemplo.com" class="contact-email reveal">pablo@ejemplo.com</a>
+    <div class="socials reveal">
+      <a href="https://github.com/tuusuario" target="_blank" class="social-link">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+      <a href="https://linkedin.com/in/tuusuario" target="_blank" class="social-link">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
     </div>
   </section>
 
