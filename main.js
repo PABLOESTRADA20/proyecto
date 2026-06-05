@@ -185,95 +185,82 @@ function extendCursorHover() {
 
 // ── Datos de proyectos ──────────────────────────────────────
 var auditProjects = [
-  { id: 'fintrack',  name: 'Fintrack Dashboard' },
-  { id: 'ecoshop',   name: 'EcoShop' },
-  { id: 'devcollab', name: 'DevCollab' },
-  { id: 'nomadmap',  name: 'NomadMap' }
+  { id: 'biodiversidad', name: 'Biodiversidad' },
+  { id: 'sqlassiisten',  name: 'sql_asiisten' }
 ];
 
 var auditClients = {
   startup: {
     label: 'Startup',
     analysis: 'Las startups buscan <strong>velocidad de desarrollo, stack moderno y capacidad de escalar</strong>. Les importa ver que puedes construir productos completos end-to-end.',
-    scores:  { devcollab: 94, fintrack: 88, ecoshop: 72, nomadmap: 65 },
+    scores:  { sqlassiisten: 90, biodiversidad: 78 },
     reasons: {
-      devcollab: 'WebRTC + WebSockets muestra capacidad técnica avanzada y un producto real.',
-      fintrack:  'Integración de IA y visualización de datos — muy valorado en startups B2C.',
-      ecoshop:   'Stripe + Prisma son stack de startup estándar. Sólido, pero secundario.',
-      nomadmap:  'Nicho estrecho. Solo si la startup opera en comunidades o lifestyle B2C.'
+      sqlassiisten:  'Stack Next.js + React + Node.js es exactamente lo que usan las startups modernas.',
+      biodiversidad: 'Dashboard interactivo demuestra manejo de datos y visualización — valioso en etapas tempranas.'
     },
     tips: [
-      'Pon DevCollab al frente — grita "puedo construir un producto real desde cero".',
-      'En Fintrack, menciona que escala a miles de usuarios, no solo que funciona.',
-      'Agrega métricas: "reduce tiempo X en Y%", "soporta Z usuarios concurrentes".'
+      'Muestra sql_asiisten primero — habla el lenguaje de producto de una startup.',
+      'En Biodiversidad, enfatiza la escalabilidad del dashboard y el manejo de grandes volúmenes de datos.',
+      'Agrega métricas reales si tienes: usuarios, velocidad de carga, etc.'
     ]
   },
   empresa: {
     label: 'Corporativo',
-    analysis: 'Las empresas grandes valoran <strong>solidez técnica, integración de sistemas y trabajo en equipo</strong>. Buscan confianza, no innovación salvaje.',
-    scores:  { fintrack: 91, devcollab: 82, ecoshop: 76, nomadmap: 45 },
+    analysis: 'Las empresas grandes valoran <strong>solidez técnica, integración de sistemas y resultados medibles</strong>. Buscan confianza y profesionalismo.',
+    scores:  { biodiversidad: 88, sqlassiisten: 74 },
     reasons: {
-      fintrack:  'Dashboards financieros con datos en tiempo real = lenguaje corporativo.',
-      devcollab: 'Herramientas de colaboración post-pandemia. Destaca el aspecto de equipos.',
-      ecoshop:   'Stack sólido. El ángulo sostenible puede resonar con la RSE corporativa.',
-      nomadmap:  'Difícil de conectar con necesidades corporativas. Ponlo al final.'
+      biodiversidad: 'Un dashboard de datos bien estructurado transmite rigor técnico y capacidad analítica.',
+      sqlassiisten:  'Arquitectura moderna con Next.js y Node.js — sólido para proyectos empresariales.'
     },
     tips: [
-      'Comienza con Fintrack — dice "entiendo procesos de negocio complejos".',
-      'Reescribe DevCollab enfocando en "productividad de equipos".',
-      'Oculta o posiciona al último NomadMap — puede sonar demasiado freelance.'
+      'Abre con Biodiversidad — los dashboards de datos resuenan en entornos corporativos.',
+      'Reencuadra sql_asiisten como una solución de gestión robusta, no solo un proyecto personal.',
+      'Destaca la estructura del código y las decisiones de arquitectura en cada proyecto.'
     ]
   },
   pyme: {
     label: 'PYME',
-    analysis: 'Las PYMEs buscan <strong>resultados visibles y facilidad de uso</strong>. Quieren ver que entiendes su negocio, no tu stack técnico.',
-    scores:  { ecoshop: 95, fintrack: 68, nomadmap: 55, devcollab: 40 },
+    analysis: 'Las PYMEs buscan <strong>resultados visibles y soluciones prácticas</strong>. Quieren ver que entiendes sus necesidades de negocio.',
+    scores:  { sqlassiisten: 93, biodiversidad: 60 },
     reasons: {
-      ecoshop:   'E-commerce real con pagos. Es exactamente lo que necesitan ver.',
-      fintrack:  'Relevante si lo reenmarcas como control financiero para negocios.',
-      nomadmap:  'Solo si la PYME es del sector turismo o hostelería.',
-      devcollab: 'Demasiado técnico para el contexto PYME. Ponlo al final.'
+      sqlassiisten:  'Aplicación funcional con interfaz real — exactamente lo que una PYME necesita ver.',
+      biodiversidad: 'Útil si la PYME trabaja con datos o análisis, pero es más nicho.'
     },
     tips: [
-      'EcoShop primero, siempre. Es tu portafolio en una sola imagen para comercios.',
-      'Cambia la descripción de Fintrack a "control financiero para negocios".',
-      'Enfoca el pitch en resultados para el cliente, no en tecnologías usadas.'
+      'sql_asiisten al frente siempre — demuestra que puedes entregar un producto usable.',
+      'Para Biodiversidad, conecta el ángulo de visualización con la toma de decisiones del negocio.',
+      'Habla de resultados para el usuario final, no del stack tecnológico.'
     ]
   },
   nomada: {
     label: 'Remoto / Nómada',
-    analysis: 'Clientes nómadas valoran <strong>productos enfocados y experiencia pulida</strong>. Son técnicos o emprendedores digitales que aprecian la calidad del producto.',
-    scores:  { nomadmap: 97, devcollab: 88, fintrack: 70, ecoshop: 52 },
+    analysis: 'Clientes remotos valoran <strong>productos pulidos, código limpio y capacidad de trabajar de forma autónoma</strong>.',
+    scores:  { sqlassiisten: 85, biodiversidad: 80 },
     reasons: {
-      nomadmap:  'Un producto hecho exactamente para esta audiencia. Abre con él sin duda.',
-      devcollab: 'Colaboración en tiempo real = exactamente lo que usan en trabajo remoto.',
-      fintrack:  'Útil como demostración de habilidades, pero no conecta con el estilo nómada.',
-      ecoshop:   'Buen proyecto, pero alejado de las necesidades de este segmento.'
+      sqlassiisten:  'App funcional y desplegada en producción — demuestra que terminas lo que empiezas.',
+      biodiversidad: 'Dashboard con React y Next.js — stack popular en equipos remotos modernos.'
     },
     tips: [
-      'NomadMap primero — es tu carta de presentación a esta comunidad.',
-      'En DevCollab, menciona que fue diseñado pensando en equipos distribuidos.',
-      'Comparte links en vivo — los nómadas valoran ver el producto funcionando.'
+      'Comparte el link en vivo de sql_asiisten — los clientes remotos quieren ver el producto funcionando.',
+      'Destaca que puedes trabajar con stack moderno sin supervisión.',
+      'Agrega README claro en GitHub — los clientes remotos valoran la documentación.'
     ]
   },
   fintech: {
     label: 'Fintech / Datos',
-    analysis: 'Clientes fintech buscan <strong>rigor técnico, visualización de datos y manejo financiero</strong>. Son los más exigentes técnicamente.',
-    scores:  { fintrack: 97, ecoshop: 70, devcollab: 65, nomadmap: 42 },
+    analysis: 'Clientes fintech buscan <strong>rigor técnico, visualización de datos y lógica de negocio sólida</strong>.',
+    scores:  { biodiversidad: 91, sqlassiisten: 72 },
     reasons: {
-      fintrack:  'IA + datos + finanzas + visualización en tiempo real. Proyecto ideal.',
-      ecoshop:   'Stripe y lógica de transacciones demuestran "lógica de negocio sólida".',
-      devcollab: 'Sistemas distribuidos — útil pero secundario en contexto fintech.',
-      nomadmap:  'Fuera de contexto para fintech. No lo incluyas en presentación inicial.'
+      biodiversidad: 'Dashboard interactivo de datos es el lenguaje nativo del mundo fintech.',
+      sqlassiisten:  'La lógica de aplicación full-stack demuestra capacidad técnica end-to-end.'
     },
     tips: [
-      'Fintrack al frente. Agrega capturas del dashboard y menciona la predicción IA.',
-      'Si tienes código en GitHub, enlázalo directamente — los fintech miran el código.',
-      'Considera agregar un proyecto de análisis de datos para redondear el perfil.'
+      'Biodiversidad primero — habla directo al core del mundo datos/fintech.',
+      'Enfatiza las decisiones de arquitectura del dashboard: fuentes de datos, actualización, rendimiento.',
+      'Si tienes código en GitHub, enlázalo — los perfiles fintech revisan el código directamente.'
     ]
   }
 };
-
 // ── Helpers ─────────────────────────────────────────────────
 function auditResetCards() {
   document.querySelectorAll('.project-card').forEach(function (card) {
