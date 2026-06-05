@@ -22,13 +22,17 @@
   <!-- NAV -->
   <nav id="navbar">
     <a class="nav-logo" href="#"><span>&lt;</span>pcocio<span>/&gt;</span></a>
-    <ul class="nav-links">
-      <li><a href="#about">sobre-mí</a></li>
-      <li><a href="#experience">experiencia</a></li>
-      <li><a href="#projects">proyectos</a></li>
-      <li><a href="#skills">stack</a></li>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" onclick="closeMenu()">sobre-mí</a></li>
+      <li><a href="#experience" onclick="closeMenu()">experiencia</a></li>
+      <li><a href="#projects" onclick="closeMenu()">proyectos</a></li>
+      <li><a href="#skills" onclick="closeMenu()">stack</a></li>
     </ul>
+    <button class="nav-hamburger" id="navHamburger" onclick="toggleMenu()" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+  <div class="nav-overlay" id="navOverlay" onclick="closeMenu()"></div>
 
   <!-- HERO -->
   <section id="hero">
@@ -286,29 +290,24 @@
       <p class="auditor-panel-q">¿A qué tipo de cliente quieres atraer?</p>
       <div class="client-grid">
         <button class="client-btn" onclick="selectClient('statup')" data-id="statup">
-          <span class="client-icon">🚀</span>
           <span class="client-label">Startup</span>
           <span class="client-desc">MPV rapido, escala agil</span>
         </button>
         <button class="client-btn" onclick="selectClient('empresa')" data-id="empresa">
-          <span class="client-icon">🏢</span>
           <span class="client-label">Corporativo</span>
           <span class="client-desc">>Solidez, entregables</span>
         </button>
         <button class="client-btn" onclick="selectClient('pyme')" data-id="pyme">
-          <span class="client-icon">🛒</span>
           <span class="client-label">PYME</span>
           <span class="client-desc">E-commerce, web</span>
         </button>
         <button class="client-btn" onclick="selectClient('nomada')" data-id="nomada">
-          <span class="client-icon">🌍</span>
           <span class="client-label">Remoto / Nómada</span>
           <span class="client-desc">Trabajo global</span>
         </button>
         <button class="client-btn" onclick="selectClient('fintech')" data-id="fintech">
-          <span class="client-icon">💹</span>
           <span class="client-label">Fintech / Datos</span>
-          <span class="client-desc">Finanzas, dashboards/span>
+          <span class="client-desc">Finanzas, dashboards</span>
         </button>
       </div>
       <div class="auditor-results" id="auditorResults"></div>
@@ -331,9 +330,9 @@
     <section id="contact">
     <p class="section-label reveal">// contacto</p>
     <h2 class="section-title reveal">¿Trabajamos juntos?</h2>
-    <a href="mailto:pablo@ejemplo.com" class="contact-email reveal">pablo@ejemplo.com</a>
+    <a href="mailto:pablo.maximiliano.cocio.estrada@gmail.com" class="contact-email reveal">pablo.maximiliano.cocio.estrada@gmail.com</a>
     <div class="socials reveal">
-      <a href="https://github.com/tuusuario" target="_blank" class="social-link">
+      <a href="https://github.com/PABLOESTRADA20" target="_blank" class="social-link">
         <i class="fab fa-github"></i> GitHub
       </a>
       <a href="https://linkedin.com/in/tuusuario" target="_blank" class="social-link">
@@ -344,7 +343,7 @@
 
   <footer>
     <p>© 2025 Pablo Cocio</p>
-    <p>Hecho con esfuerzo y ☕</p>
+    <p>Hecho con esfuerzo</p>
   </footer>
 
   <nav class="bottom-nav" aria-label="Navegación móvil">

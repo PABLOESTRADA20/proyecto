@@ -382,3 +382,23 @@ window.selectClient = function (id) {
   results.classList.add('show');
   extendCursorHover();
 };
+// ── Mobile navbar ────────────────────────────────────────────
+window.toggleMenu = function () {
+  var links    = document.getElementById('navLinks');
+  var burger   = document.getElementById('navHamburger');
+  var overlay  = document.getElementById('navOverlay');
+  links.classList.toggle('open');
+  burger.classList.toggle('open');
+  overlay.classList.toggle('show');
+  document.body.style.overflow = links.classList.contains('open') ? 'hidden' : '';
+};
+
+window.closeMenu = function () {
+  var links    = document.getElementById('navLinks');
+  var burger   = document.getElementById('navHamburger');
+  var overlay  = document.getElementById('navOverlay');
+  if (links)   links.classList.remove('open');
+  if (burger)  burger.classList.remove('open');
+  if (overlay) overlay.classList.remove('show');
+  document.body.style.overflow = '';
+};

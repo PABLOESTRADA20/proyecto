@@ -134,6 +134,38 @@ nav.scrolled {
 .nav-links a:hover {
   color: var(--text);
 }
+/* ─── HAMBURGER ──────────────────────────────────────── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 110;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.nav-hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.nav-hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
 
 /* ─── HERO ───────────────────────────────────────────── */
 #hero {
@@ -1190,8 +1222,15 @@ footer p {
   }
 
   .about-photo {
-    max-width: 300px;
+    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
+  }
+
+  .photo-frame img {
+    height: 320px;
+    object-fit: cover;
+    object-position: top center;
   }
 
   .skills-grid {
@@ -1210,6 +1249,48 @@ footer p {
 
   nav {
     padding: 1rem 1.5rem;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 70%;
+    max-width: 280px;
+    background: rgba(10, 10, 15, 0.97);
+    backdrop-filter: blur(20px);
+    border-left: 1px solid var(--border);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    transition: right 0.35s ease;
+    z-index: 105;
+  }
+
+  .nav-links.open {
+    right: 0;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+  }
+
+  .nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 104;
+  }
+
+  .nav-overlay.show {
+    display: block;
   }
 
   section {
