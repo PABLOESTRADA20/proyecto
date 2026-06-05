@@ -10,18 +10,8 @@ document.addEventListener('mousemove', function (e) {
   mouseX = e.clientX; mouseY = e.clientY;
   dot.style.left = mouseX + 'px'; dot.style.top = mouseY + 'px';
 });
-function animateCursor() {
-  ringX += (mouseX - ringX) * 0.1;
-  ringY += (mouseY - ringY) * 0.1;
-  ring.style.left = ringX + 'px'; ring.style.top = ringY + 'px';
-  requestAnimationFrame(animateCursor);
-}
-animateCursor();
 
-document.querySelectorAll('a, button, .project-card, .skill-pill, .contact-card, .acard').forEach(function (el) {
-  el.addEventListener('mouseenter', function () { document.body.classList.add('hovering'); });
-  el.addEventListener('mouseleave', function () { document.body.classList.remove('hovering'); });
-});
+
 
 
 // ════════════════════════════════════════════════════════════
