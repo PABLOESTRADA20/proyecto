@@ -7,9 +7,8 @@
   <title>Pablo Cocio — Dev Frontend</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@300;400;500&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -19,20 +18,67 @@
     <div class="ring"></div>
   </div>
 
-  <!-- NAV -->
+  <!-- NAV DESKTOP -->
   <nav id="navbar">
-    <a class="nav-logo" href="#"><span>&lt;</span>pcocio<span>/&gt;</span></a>
+    <div class="nav-brand">
+      <span class="material-symbols-outlined nav-terminal-icon">terminal</span>
+      <a class="nav-logo" href="#">pcocio</a>
+    </div>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#about" onclick="closeMenu()">sobre-mí</a></li>
-      <li><a href="#experience" onclick="closeMenu()">experiencia</a></li>
-      <li><a href="#projects" onclick="closeMenu()">proyectos</a></li>
-      <li><a href="#skills" onclick="closeMenu()">stack</a></li>
+      <li><a href="#about">sobre-mí</a></li>
+      <li><a href="#experience">experiencia</a></li>
+      <li><a href="#projects">proyectos</a></li>
+      <li><a href="#skills">stack</a></li>
     </ul>
-    <button class="nav-hamburger" id="navHamburger" onclick="toggleMenu()" aria-label="Menú">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-right">
+      <a class="nav-contact-btn" href="#contact">contactar_</a>
+      <button class="nav-hamburger" id="navHamburger" onclick="toggleDrawer()" aria-label="Menú">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
   </nav>
-  <div class="nav-overlay" id="navOverlay" onclick="closeMenu()"></div>
+
+  <!-- DRAWER OVERLAY -->
+  <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+
+  <!-- NAVIGATION DRAWER (MOBILE) -->
+  <aside class="nav-drawer" id="navDrawer">
+    <div class="drawer-header">
+      <span class="drawer-label">./navigation</span>
+      <button class="drawer-close" onclick="closeDrawer()">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <nav class="drawer-links">
+      <a href="#about" class="drawer-item drawer-item-active" onclick="closeDrawer()">
+        <span class="material-symbols-outlined">person_search</span>
+        sobre-mí
+      </a>
+      <a href="#experience" class="drawer-item" onclick="closeDrawer()">
+        <span class="material-symbols-outlined">code_blocks</span>
+        experiencia
+      </a>
+      <a href="#projects" class="drawer-item" onclick="closeDrawer()">
+        <span class="material-symbols-outlined">terminal</span>
+        proyectos
+      </a>
+      <a href="#skills" class="drawer-item" onclick="closeDrawer()">
+        <span class="material-symbols-outlined">layers</span>
+        stack
+      </a>
+      <a href="#contact" class="drawer-item" onclick="closeDrawer()">
+        <span class="material-symbols-outlined">alternate_email</span>
+        contacto
+      </a>
+    </nav>
+    <div class="drawer-footer">
+      <span class="drawer-footer-label">// red_social</span>
+      <div class="drawer-socials">
+        <a href="https://github.com/PABLOESTRADA20" target="_blank"><span class="material-symbols-outlined">terminal</span></a>
+        <a href="https://www.instagram.com/pablo_cocio" target="_blank"><span class="material-symbols-outlined">alternate_email</span></a>
+      </div>
+    </div>
+  </aside>
 
   <!-- HERO -->
   <section id="hero">
@@ -42,63 +88,48 @@
       <h1>
         <span class="line"><span>Hola, soy</span></span>
         <span class="line"><span>Pablo Cocio</span></span>
-        <span class="line"><span>Dev Frontend</span></span>
+        <span class="line hero-line-accent"><span>Dev Frontend</span></span>
       </h1>
       <p class="hero-desc">
         Construyo experiencias digitales rápidas, accesibles y con un diseño que la gente recuerda.
         Especializado en React y Node.js.
       </p>
       <div class="hero-cta">
-        <a class="btn btn-primary" href="#projects">Ver proyectos →</a>
+        <a class="btn btn-primary" href="#projects">Ver proyectos <span class="material-symbols-outlined" style="font-size:16px;vertical-align:middle;">arrow_forward</span></a>
         <a class="btn btn-outline" href="#contact">Contactar</a>
       </div>
     </div>
     <div class="hero-visual">
       <div class="code-window">
         <div class="code-bar"><span></span><span></span><span></span></div>
-        <div class="code-line"><span class="kw">const</span> <span class="fn">developer</span> <span class="punct">=
-            {</span></div>
-        <div class="code-line">&nbsp;&nbsp;<span class="str">nombre</span><span class="punct">:</span> <span
-            class="str">"Pablo Cocio"</span><span class="punct">,</span></div>
-        <div class="code-line">&nbsp;&nbsp;<span class="str">rol</span><span class="punct">:</span> <span
-            class="str">"Frontend Dev"</span><span class="punct">,</span></div>
-        <div class="code-line">&nbsp;&nbsp;<span class="str">stack</span><span class="punct">: [</span><span
-            class="str">"React"</span><span class="punct">,</span> <span class="str">"Next.js"</span><span
-            class="punct">],</span></div>
-        <div class="code-line">&nbsp;&nbsp;<span class="str">años_exp</span><span class="punct">:</span> <span
-            class="num">1</span><span class="punct">,</span></div>
-        <div class="code-line">&nbsp;&nbsp;<span class="str">Monster</span><span class="punct">:</span> <span
-            class="num">2</span><span class="punct">,</span></div>
+        <div class="code-line code-filename">developer.js</div>
+        <div class="code-line"><span class="kw">const</span> <span class="fn">developer</span> <span class="punct">= {</span></div>
+        <div class="code-line">&nbsp;&nbsp;<span class="str">nombre</span><span class="punct">:</span> <span class="str">"Pablo Cocio"</span><span class="punct">,</span></div>
+        <div class="code-line">&nbsp;&nbsp;<span class="str">rol</span><span class="punct">:</span> <span class="str">"Frontend Dev"</span><span class="punct">,</span></div>
+        <div class="code-line">&nbsp;&nbsp;<span class="str">stack</span><span class="punct">: [</span><span class="str">"React"</span><span class="punct">,</span> <span class="str">"Next.js"</span><span class="punct">],</span></div>
+        <div class="code-line">&nbsp;&nbsp;<span class="str">años_exp</span><span class="punct">:</span> <span class="num">1</span><span class="punct">,</span></div>
+        <div class="code-line">&nbsp;&nbsp;<span class="str">Monster</span><span class="punct">:</span> <span class="num">2</span><span class="punct">,</span></div>
         <div class="code-line"><span class="punct">}</span></div>
         <br>
-        <div class="code-line typing-hero"><span class="fn">developer</span><span class="punct">.</span><span
-            class="fn">construir</span><span class="punct">(</span><span class="str">"tu idea"</span><span
-            class="punct">)</span></div>
+        <div class="code-line typing-hero"><span class="fn">developer</span><span class="punct">.</span><span class="fn">construir</span><span class="punct">(</span><span class="str">"tu idea"</span><span class="punct">)</span></div>
+        <div class="code-cursor"></div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════
-       SECCIÓN SOBRE MÍ — INTERACTIVA
-  ══════════════════════════════════════════ -->
+  <!-- SOBRE MÍ -->
   <section id="about">
-
     <p class="section-label reveal">// sobre mí</p>
-
-    <!-- FRASE TYPING ──────────────────────────────── -->
     <div class="about-typing-wrap reveal">
       <span class="about-typing-prefix">&gt;&nbsp;</span>
       <span id="about-typing" class="about-typing-text"></span>
       <span class="about-typing-cursor">▋</span>
     </div>
 
-    <!-- FOTO + CARDS ──────────────────────────────── -->
     <div class="about-main reveal">
-
-      <!-- Foto de perfil -->
       <div class="about-photo">
         <div class="photo-frame">
-          <img src="/img/WhatsApp Image 2026-04-22 at 13.08.35.jpeg" alt="Pablo Cocio" id="profile-photo" />
+          <img src="img/profile.jpg" alt="Pablo Cocio" id="profile-photo" onerror="this.src='img/WhatsApp Image 2026-04-22 at 13.08.35.jpeg'" />
           <div class="photo-badge"><span class="badge-dot"></span>Disponible</div>
         </div>
         <label class="upload-btn" for="photo-upload">
@@ -107,9 +138,7 @@
         </label>
       </div>
 
-      <!-- Cards expandibles -->
       <div class="about-cards">
-
         <div class="acard" data-index="0">
           <div class="acard-header">
             <span class="acard-icon"><i class="fas fa-user"></i></span>
@@ -117,8 +146,7 @@
             <span class="acard-chevron"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="acard-body">
-            <p>Desarrollador enfocado en construir experiencias digitales que no solo funcionen bien, sino que también
-              se sientan bien. Me especializo en transformar ideas en productos sólidos.</p>
+            <p>Desarrollador enfocado en construir experiencias digitales que no solo funcionen bien, sino que también se sientan bien. Me especializo en transformar ideas en productos sólidos.</p>
             <div class="acard-stats">
               <div class="acard-stat"><span class="acard-num">1+</span><span class="acard-label">año exp.</span></div>
               <div class="acard-stat"><span class="acard-num">4+</span><span class="acard-label">proyectos</span></div>
@@ -134,7 +162,7 @@
             <span class="acard-chevron"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="acard-body">
-            <p> Trabajo con ciclos cortos de feedback, iterando rápido sin sacrificar calidad.</p>
+            <p>Trabajo con ciclos cortos de feedback, iterando rápido sin sacrificar calidad.</p>
             <div class="acard-tags">
               <span>Agile</span><span>Code Review</span><span>TDD</span><span>CI/CD</span>
             </div>
@@ -142,17 +170,13 @@
         </div>
 
         <div class="acard" data-index="2">
-          <div class="acard-icon-wrap">
-            <span class="acard-icon"><i class="fas fa-mountain-sun"></i></span>
-          </div>
           <div class="acard-header">
             <span class="acard-icon"><i class="fas fa-mountain-sun"></i></span>
             <span class="acard-title">Fuera del código</span>
             <span class="acard-chevron"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="acard-body">
-            <p>Exploro montañas, estudio Nuevos Lenguajes y hago dibujos con inspiracion . Creo que
-              las mejores ideas llegan lejos de la pantalla.</p>
+            <p>Exploro montañas, estudio nuevos lenguajes y hago dibujos con inspiración. Las mejores ideas llegan lejos de la pantalla.</p>
             <div class="acard-hobbies">
               <span><i class="fas fa-hiking"></i> Trekking</span>
               <span><i class="fas fa-coffee"></i> Café</span>
@@ -182,69 +206,41 @@
             </div>
           </div>
         </div>
-
-      </div><!-- /about-cards -->
-    </div><!-- /about-main -->
-
+      </div>
+    </div>
   </section>
-  <!-- ══ FIN SOBRE MÍ ══ -->
 
   <!-- EXPERIENCIA -->
   <section id="experience">
     <p class="section-label reveal">// experiencia</p>
     <h2 class="section-title reveal">Trayectoria</h2>
     <div class="experience-grid">
-
       <div class="exp-card reveal">
-        <div class="exp-card-top">
-          <p class="exp-num">001</p>
-          <span class="exp-arrow">↗</span>
-        </div>
-        <p class="exp-date"> 2026</p>
-        <h3 class="exp-title">práctica </h3>
+        <div class="exp-card-top"><p class="exp-num">001</p><span class="exp-arrow">↗</span></div>
+        <p class="exp-date">2026</p>
+        <h3 class="exp-title">práctica</h3>
         <p class="exp-company"><i class="fas fa-building"></i> Language Center — Santiago, Chile</p>
         <p class="exp-desc">Arregle una app que no contenía frontend y mejore la experiencia del usuario.</p>
-        <div class="exp-tags">
-          <span class="tag">React</span>
-          <span class="tag">Next.js</span>
-          <span class="tag">TypeScript</span>
-        </div>
+        <div class="exp-tags"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">TypeScript</span></div>
         <span class="exp-badge exp-badge-active">Practica</span>
       </div>
-
       <div class="exp-card reveal">
-        <div class="exp-card-top">
-          <p class="exp-num">002</p>
-          <span class="exp-arrow">↗</span>
-        </div>
+        <div class="exp-card-top"><p class="exp-num">002</p><span class="exp-arrow">↗</span></div>
         <p class="exp-date">2024</p>
         <h3 class="exp-title">diccionario con 4 idiomas</h3>
-        <p class="exp-company"><i class="fas fa-building"></i> Cmch Maristas-Santiago-Chile</p>
+        <p class="exp-company"><i class="fas fa-building"></i> Cmch Maristas — Santiago, Chile</p>
         <p class="exp-desc">Desarrollé un diccionario y traducciones para 4 idiomas.</p>
-        <div class="exp-tags">
-          <span class="tag">HTML</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">CSS</span>
-        </div>
+        <div class="exp-tags"><span class="tag">HTML</span><span class="tag">JavaScript</span><span class="tag">CSS</span></div>
       </div>
-
       <div class="exp-card reveal">
-        <div class="exp-card-top">
-          <p class="exp-num">003</p>
-          <span class="exp-arrow">↗</span>
-        </div>
-        <p class="exp-date"> Presente </p>
+        <div class="exp-card-top"><p class="exp-num">003</p><span class="exp-arrow">↗</span></div>
+        <p class="exp-date">Presente</p>
         <h3 class="exp-title">Junior Developer</h3>
         <p class="exp-company"><i class="fas fa-laptop"></i> Freelance</p>
         <p class="exp-desc">Creando una red social para diferentes plataformas.</p>
-        <div class="exp-tags">
-          <span class="tag">React</span>
-          <span class="tag">Next.js</span>
-          <span class="tag">TypeScript</span>
-        </div>
+        <div class="exp-tags"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">TypeScript</span></div>
         <span class="exp-badge exp-badge-active">Devsactum</span>
       </div>
-
     </div>
   </section>
 
@@ -256,30 +252,24 @@
       <div class="project-card reveal" data-id="biodiversidad">
         <p class="project-num">001</p><span class="project-arrow">↗</span>
         <h3 class="project-name">Biodiversidad</h3>
-        <p class="project-desc">Creacion de un frontend para visualizar datos de biodiversidad y un dashboard
-          interactivo.</p>
+        <p class="project-desc">Creación de un frontend para visualizar datos de biodiversidad y un dashboard interactivo.</p>
         <div class="project-tags"><span class="tag">React</span><span class="tag">Next.js</span></div>
       </div>
       <a href="https://sql-academy.pages.dev/" target="_blank" class="project-card project-card-link reveal" data-id="sqlassiisten">
         <p class="project-num">002</p><span class="project-arrow">↗</span>
         <h3 class="project-name">sql_asiisten</h3>
         <p class="project-desc">Aplicación web full-stack construida con Next.js, React y Node.js.</p>
-        <div class="project-tags"><span class="tag">Next.js</span><span class="tag">React</span><span
-            class="tag">node.js</span></div>
+        <div class="project-tags"><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">node.js</span></div>
       </a>
     </div>
 
-
     <div class="auditor-banner reveal" id="auditorBanner">
       <div class="auditor-banner-left">
-        <p class="auditor-eyebrow"> // Herramientas</p>
+        <p class="auditor-eyebrow">// Herramientas</p>
         <p class="auditor-title">¿No sabes por dónde empezar?</p>
-        <p class="auditor-desc">Dime qué tipo de cliente buscas y te muestro qué proyectos ver primero — y cómo leerlos.
-        </p>
+        <p class="auditor-desc">Dime qué tipo de cliente buscas y te muestro qué proyectos ver primero — y cómo leerlos.</p>
       </div>
-      <button class="auditor-trigger" onclick="openAuditor()">
-        Auditar portafolio <span class="auditor-arrow">→</span>
-      </button>
+      <button class="auditor-trigger" onclick="openAuditor()">Auditar portafolio <span class="auditor-arrow">→</span></button>
     </div>
 
     <div class="auditor-panel" id="auditorPanel">
@@ -289,26 +279,11 @@
       </div>
       <p class="auditor-panel-q">¿A qué tipo de cliente quieres atraer?</p>
       <div class="client-grid">
-        <button class="client-btn" onclick="selectClient('statup')" data-id="statup">
-          <span class="client-label">Startup</span>
-          <span class="client-desc">MPV rapido, escala agil</span>
-        </button>
-        <button class="client-btn" onclick="selectClient('empresa')" data-id="empresa">
-          <span class="client-label">Corporativo</span>
-          <span class="client-desc">>Solidez, entregables</span>
-        </button>
-        <button class="client-btn" onclick="selectClient('pyme')" data-id="pyme">
-          <span class="client-label">PYME</span>
-          <span class="client-desc">E-commerce, web</span>
-        </button>
-        <button class="client-btn" onclick="selectClient('nomada')" data-id="nomada">
-          <span class="client-label">Remoto / Nómada</span>
-          <span class="client-desc">Trabajo global</span>
-        </button>
-        <button class="client-btn" onclick="selectClient('fintech')" data-id="fintech">
-          <span class="client-label">Fintech / Datos</span>
-          <span class="client-desc">Finanzas, dashboards</span>
-        </button>
+        <button class="client-btn" onclick="selectClient('startup')" data-id="startup"><span class="client-label">Startup</span><span class="client-desc">MVP rápido, escala ágil</span></button>
+        <button class="client-btn" onclick="selectClient('empresa')" data-id="empresa"><span class="client-label">Corporativo</span><span class="client-desc">Solidez, entregables</span></button>
+        <button class="client-btn" onclick="selectClient('pyme')" data-id="pyme"><span class="client-label">PYME</span><span class="client-desc">E-commerce, web</span></button>
+        <button class="client-btn" onclick="selectClient('nomada')" data-id="nomada"><span class="client-label">Remoto / Nómada</span><span class="client-desc">Trabajo global</span></button>
+        <button class="client-btn" onclick="selectClient('fintech')" data-id="fintech"><span class="client-label">Fintech / Datos</span><span class="client-desc">Finanzas, dashboards</span></button>
       </div>
       <div class="auditor-results" id="auditorResults"></div>
     </div>
@@ -327,33 +302,31 @@
     </div>
   </section>
 
-    <section id="contact">
+  <!-- CONTACTO -->
+  <section id="contact">
     <p class="section-label reveal">// contacto</p>
     <h2 class="section-title reveal">¿Trabajamos juntos?</h2>
     <a href="mailto:pablo.maximiliano.cocio.estrada@gmail.com" class="contact-email reveal">pablo.maximiliano.cocio.estrada@gmail.com</a>
     <div class="socials reveal">
-      <a href="https://github.com/PABLOESTRADA20" target="_blank" class="social-link">
-        <i class="fab fa-github"></i> GitHub
-      </a>
-      <a href="https://linkedin.com/in/tuusuario" target="_blank" class="social-link">
-        <i class="fab fa-linkedin"></i> LinkedIn
-      </a>
+      <a href="https://github.com/PABLOESTRADA20" target="_blank" class="social-link"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://linkedin.com/in/tuusuario" target="_blank" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
     </div>
   </section>
 
   <footer>
     <p>© 2025 Pablo Cocio</p>
-    <p>Hecho con esfuerzo</p>
+    <p>built_with_intent</p>
   </footer>
 
-  <nav class="bottom-nav" aria-label="Navegación móvil">
-    <a href="#about" class="nav-item"><i class="fas fa-user"></i><span>Sobre mí</span></a>
-    <a href="#experience" class="nav-item"><i class="fas fa-briefcase"></i><span>Experiencia</span></a>
-    <a href="#projects" class="nav-item"><i class="fas fa-briefcase"></i><span>Proyectos</span></a>
-    <a href="#skills" class="nav-item"><i class="fas fa-cogs"></i><span>Skills</span></a>
+  <!-- BOTTOM NAV MÓVIL -->
+  <nav class="bottom-nav" aria-label="Navegación móvil" id="bottomNav">
+    <a href="#about" class="nav-item"><span class="material-symbols-outlined">person_search</span><span>Sobre mí</span></a>
+    <a href="#experience" class="nav-item"><span class="material-symbols-outlined">code_blocks</span><span>Experiencia</span></a>
+    <a href="#projects" class="nav-item"><span class="material-symbols-outlined">terminal</span><span>Proyectos</span></a>
+    <a href="#skills" class="nav-item"><span class="material-symbols-outlined">layers</span><span>Stack</span></a>
+    <a href="#contact" class="nav-item"><span class="material-symbols-outlined">alternate_email</span><span>Contacto</span></a>
   </nav>
 
   <script src="main.js"></script>
 </body>
-
 </html>
