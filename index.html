@@ -5,6 +5,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pablo Cocio — Dev Frontend</title>
+  <meta name="description" content="Pablo Cocio — Desarrollador Frontend especializado en React, Next.js y Node.js. Construyo experiencias digitales rápidas, accesibles y con diseño memorable.">
+  <meta name="author" content="Pablo Cocio">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pablo Cocio — Dev Frontend">
+  <meta property="og:description" content="Desarrollador Frontend especializado en React, Next.js y Node.js.">
+  <meta property="og:image" content="img/profile.jpg">
+  <meta property="og:url" content="https://pabloestrada20.github.io/proyecto/">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Pablo Cocio — Dev Frontend">
+  <meta name="twitter:description" content="Desarrollador Frontend especializado en React, Next.js y Node.js.">
+  <meta name="twitter:image" content="img/profile.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
@@ -108,7 +125,7 @@
         <div class="code-line">&nbsp;&nbsp;<span class="str">rol</span><span class="punct">:</span> <span class="str">"Frontend Dev"</span><span class="punct">,</span></div>
         <div class="code-line">&nbsp;&nbsp;<span class="str">stack</span><span class="punct">: [</span><span class="str">"React"</span><span class="punct">,</span> <span class="str">"Next.js"</span><span class="punct">],</span></div>
         <div class="code-line">&nbsp;&nbsp;<span class="str">años_exp</span><span class="punct">:</span> <span class="num">1</span><span class="punct">,</span></div>
-        <div class="code-line">&nbsp;&nbsp;<span class="str">Monster</span><span class="punct">:</span> <span class="num">2</span><span class="punct">,</span></div>
+        <div class="code-line">&nbsp;&nbsp;<span class="str">proyectos_activos</span><span class="punct">:</span> <span class="num">2</span><span class="punct">,</span></div>
         <div class="code-line"><span class="punct">}</span></div>
         <br>
         <div class="code-line typing-hero"><span class="fn">developer</span><span class="punct">.</span><span class="fn">construir</span><span class="punct">(</span><span class="str">"tu idea"</span><span class="punct">)</span></div>
@@ -129,13 +146,14 @@
     <div class="about-main reveal">
       <div class="about-photo">
         <div class="photo-frame">
-          <img src="img/profile.jpg" alt="Pablo Cocio" id="profile-photo" onerror="this.src='img/WhatsApp Image 2026-04-22 at 13.08.35.jpeg'" />
+          <img src="img/profile.jpg" alt="Pablo Cocio" id="profile-photo" loading="lazy" />
           <div class="photo-badge"><span class="badge-dot"></span>Disponible</div>
         </div>
-        <label class="upload-btn" for="photo-upload">
+        <label class="upload-btn" for="photo-upload" title="Demo visual: el cambio solo se ve en tu navegador, no se guarda">
           <i class="fas fa-camera"></i> Cambiar foto
           <input type="file" id="photo-upload" accept="image/*" hidden>
         </label>
+        <span class="upload-hint">// solo demo, no se guarda</span>
       </div>
 
       <div class="about-cards">
@@ -261,6 +279,18 @@
         <p class="project-desc">Aplicación web full-stack construida con Next.js, React y Node.js.</p>
         <div class="project-tags"><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">node.js</span></div>
       </a>
+      <div class="project-card reveal" data-id="animeverse">
+        <p class="project-num">003</p><span class="project-arrow">↗</span>
+        <h3 class="project-name">AnimeVerse</h3>
+        <p class="project-desc">Plataforma de streaming en español para anime, manga y novelas — arquitectura de providers, migración a TypeScript y reproductor con subtítulos propios.</p>
+        <div class="project-tags"><span class="tag">React</span><span class="tag">Vite</span><span class="tag">Supabase</span><span class="tag">TypeScript</span></div>
+      </div>
+      <div class="project-card reveal" data-id="devsanctum">
+        <p class="project-num">004</p><span class="project-arrow">↗</span>
+        <h3 class="project-name">DevSanctum</h3>
+        <p class="project-desc">Red social para desarrolladores. Arquitectura por features, librería de componentes propia y sistema de diseño con Tailwind v4.</p>
+        <div class="project-tags"><span class="tag">Next.js 16</span><span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">Tailwind 4</span></div>
+      </div>
     </div>
 
     <div class="auditor-banner reveal" id="auditorBanner">
@@ -309,12 +339,13 @@
     <a href="mailto:pablo.maximiliano.cocio.estrada@gmail.com" class="contact-email reveal">pablo.maximiliano.cocio.estrada@gmail.com</a>
     <div class="socials reveal">
       <a href="https://github.com/PABLOESTRADA20" target="_blank" class="social-link"><i class="fab fa-github"></i> GitHub</a>
-      <a href="https://linkedin.com/in/tuusuario" target="_blank" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+
+      <a href="https://linkedin.com/in/pablo-cocio" target="_blank" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Pablo Cocio</p>
+    <p>© 2026 Pablo Cocio</p>
     <p>built_with_intent</p>
   </footer>
 

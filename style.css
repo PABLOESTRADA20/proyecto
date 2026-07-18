@@ -686,6 +686,16 @@ section {
   color: var(--accent);
 }
 
+.upload-hint {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--muted);
+  opacity: 0.6;
+  text-align: center;
+}
+
 /* — CARDS EXPANDIBLES — */
 .about-cards {
   display: flex;

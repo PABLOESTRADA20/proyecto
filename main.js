@@ -1,6 +1,4 @@
-// ════════════════════════════════════════════════════════════
-//  CURSOR
-// ════════════════════════════════════════════════════════════
+
 const cursor = document.getElementById('cursor');
 const dot = cursor.querySelector('.dot');
 const ring = cursor.querySelector('.ring');
@@ -14,17 +12,13 @@ document.addEventListener('mousemove', function (e) {
 
 
 
-// ════════════════════════════════════════════════════════════
-//  NAVBAR
-// ════════════════════════════════════════════════════════════
+
 var navbar = document.getElementById('navbar');
 window.addEventListener('scroll', function () {
   navbar.classList.toggle('scrolled', window.scrollY > 50);
 });
 
 
-// ════════════════════════════════════════════════════════════
-//  SCROLL REVEAL (elementos genéricos con clase .reveal)
 // ════════════════════════════════════════════════════════════
 var revealObserver = new IntersectionObserver(function (entries) {
   entries.forEach(function (entry) {
@@ -40,13 +34,7 @@ document.querySelectorAll('.reveal').forEach(function (el) {
 });
 
 
-// ════════════════════════════════════════════════════════════
-//  TYPING EFFECT — Sección "Sobre mí"
-//
-//  Muestra frases distintas en un bucle infinito.
-//  Cada frase se "escribe" carácter a carácter (typeSpeed ms),
-//  espera (pauseTime ms) y luego se "borra" carácter a carácter.
-// ════════════════════════════════════════════════════════════
+
 var phrases = [
   'Desarrollador Frontend con alma de diseñador.',
   'Apasionado por el código limpio y la UX.',
@@ -56,15 +44,14 @@ var phrases = [
 ];
 
 var typingEl = document.getElementById('about-typing');
-var phraseIdx = 0;   // índice de la frase actual
-var charIdx = 0;   // índice del carácter actual dentro de la frase
+var phraseIdx = 0;   
+var charIdx = 0;   
 var isDeleting = false;
-var typeSpeed = 55;  // ms entre cada carácter al escribir
-var deleteSpeed = 28;  // ms entre cada carácter al borrar
-var pauseTime = 2000;// ms de pausa cuando la frase está completa
+var typeSpeed = 55;  
+var deleteSpeed = 28;  
+var pauseTime = 2000;
 
-// La sección debe ser visible antes de arrancar el efecto.
-// Usamos IntersectionObserver para esperar que entre al viewport.
+
 var typingStarted = false;
 
 var typingObserver = new IntersectionObserver(function (entries) {
@@ -82,7 +69,7 @@ function typeLoop() {
   var current = phrases[phraseIdx];
 
   if (!isDeleting) {
-    // ── Escribiendo ──
+  
     charIdx++;
     typingEl.textContent = current.slice(0, charIdx);
 
@@ -95,7 +82,7 @@ function typeLoop() {
     setTimeout(typeLoop, typeSpeed);
 
   } else {
-    // ── Borrando ──
+  
     charIdx--;
     typingEl.textContent = current.slice(0, charIdx);
 
@@ -111,13 +98,7 @@ function typeLoop() {
 }
 
 
-// ════════════════════════════════════════════════════════════
-//  CARDS EXPANDIBLES — Sección "Sobre mí"
-//
-//  Al hacer clic en una card se abre/cierra con la clase "open".
-//  El CSS gestiona la transición de max-height y opacidad.
-//  La primera card abre sola al cargar.
-// ════════════════════════════════════════════════════════════
+
 var cards = document.querySelectorAll('.acard');
 
 // Abrir la primera card automáticamente después de un momento
@@ -140,9 +121,7 @@ cards.forEach(function (card) {
 
 
 
-// ════════════════════════════════════════════════════════════
-//  SUBIR FOTO DE PERFIL
-// ════════════════════════════════════════════════════════════
+
 var photoInput = document.getElementById('photo-upload');
 var profileImg = document.getElementById('profile-photo');
 
@@ -156,7 +135,7 @@ if (photoInput && profileImg) {
   });
 }
 
-// Active nav highlight on scroll
+
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.bottom-nav a');
 window.addEventListener('scroll', () => {
@@ -170,12 +149,7 @@ window.addEventListener('scroll', () => {
 
 // ════════════════════════════════════════════════════════════
 //  AUDITOR DE PORTAFOLIO
-//
-//  Agrega los event listeners del cursor a los nuevos botones
-//  del auditor y gestiona toda la lógica de selección.
-// ════════════════════════════════════════════════════════════
 
-// Extender el hover del cursor a los botones del auditor
 function extendCursorHover() {
   document.querySelectorAll('.client-btn, .auditor-trigger, .auditor-close, .audit-reset').forEach(function (el) {
     el.addEventListener('mouseenter', function () { document.body.classList.add('hovering'); });
@@ -183,23 +157,28 @@ function extendCursorHover() {
   });
 }
 
-// ── Datos de proyectos ──────────────────────────────────────
+
 var auditProjects = [
   { id: 'biodiversidad', name: 'Biodiversidad' },
-  { id: 'sqlassiisten',  name: 'sql_asiisten' }
+  { id: 'sqlassiisten',  name: 'sql_asiisten' },
+  { id: 'animeverse',    name: 'AnimeVerse' },
+  { id: 'devsanctum',    name: 'DevSanctum' }
 ];
 
 var auditClients = {
   startup: {
     label: 'Startup',
     analysis: 'Las startups buscan <strong>velocidad de desarrollo, stack moderno y capacidad de escalar</strong>. Les importa ver que puedes construir productos completos end-to-end.',
-    scores:  { sqlassiisten: 90, biodiversidad: 78 },
+    scores:  { sqlassiisten: 90, animeverse: 85, devsanctum: 82, biodiversidad: 78 },
     reasons: {
       sqlassiisten:  'Stack Next.js + React + Node.js es exactamente lo que usan las startups modernas.',
+      animeverse:    'Producto real con usuarios, migración técnica activa y decisiones de arquitectura visibles.',
+      devsanctum:    'Red social construida desde cero — muestra que puedes llevar un producto completo end-to-end.',
       biodiversidad: 'Dashboard interactivo demuestra manejo de datos y visualización — valioso en etapas tempranas.'
     },
     tips: [
       'Muestra sql_asiisten primero — habla el lenguaje de producto de una startup.',
+      'En AnimeVerse, destaca la velocidad de iteración: fases de mejora técnica documentadas y ejecutadas.',
       'En Biodiversidad, enfatiza la escalabilidad del dashboard y el manejo de grandes volúmenes de datos.',
       'Agrega métricas reales si tienes: usuarios, velocidad de carga, etc.'
     ]
@@ -207,13 +186,16 @@ var auditClients = {
   empresa: {
     label: 'Corporativo',
     analysis: 'Las empresas grandes valoran <strong>solidez técnica, integración de sistemas y resultados medibles</strong>. Buscan confianza y profesionalismo.',
-    scores:  { biodiversidad: 88, sqlassiisten: 74 },
+    scores:  { biodiversidad: 88, devsanctum: 80, sqlassiisten: 74, animeverse: 70 },
     reasons: {
       biodiversidad: 'Un dashboard de datos bien estructurado transmite rigor técnico y capacidad analítica.',
-      sqlassiisten:  'Arquitectura moderna con Next.js y Node.js — sólido para proyectos empresariales.'
+      devsanctum:    'Refactor de arquitectura plana a estructura por features — demuestra criterio de escalabilidad.',
+      sqlassiisten:  'Arquitectura moderna con Next.js y Node.js — sólido para proyectos empresariales.',
+      animeverse:    'Plan de migración técnica por fases — transmite orden y planificación, valorado en entornos corporativos.'
     },
     tips: [
       'Abre con Biodiversidad — los dashboards de datos resuenan en entornos corporativos.',
+      'En DevSanctum, resalta la migración de arquitectura y el sistema de diseño propio.',
       'Reencuadra sql_asiisten como una solución de gestión robusta, no solo un proyecto personal.',
       'Destaca la estructura del código y las decisiones de arquitectura en cada proyecto.'
     ]
@@ -221,13 +203,16 @@ var auditClients = {
   pyme: {
     label: 'PYME',
     analysis: 'Las PYMEs buscan <strong>resultados visibles y soluciones prácticas</strong>. Quieren ver que entiendes sus necesidades de negocio.',
-    scores:  { sqlassiisten: 93, biodiversidad: 60 },
+    scores:  { sqlassiisten: 93, animeverse: 82, devsanctum: 65, biodiversidad: 60 },
     reasons: {
       sqlassiisten:  'Aplicación funcional con interfaz real — exactamente lo que una PYME necesita ver.',
+      animeverse:    'Plataforma con usuarios reales y contenido en producción — fácil de entender para un negocio.',
+      devsanctum:    'Producto sólido, aunque una red social es menos directo para una PYME típica.',
       biodiversidad: 'Útil si la PYME trabaja con datos o análisis, pero es más nicho.'
     },
     tips: [
       'sql_asiisten al frente siempre — demuestra que puedes entregar un producto usable.',
+      'AnimeVerse funciona bien como segundo ejemplo: producto real, en producción, con usuarios.',
       'Para Biodiversidad, conecta el ángulo de visualización con la toma de decisiones del negocio.',
       'Habla de resultados para el usuario final, no del stack tecnológico.'
     ]
@@ -235,13 +220,16 @@ var auditClients = {
   nomada: {
     label: 'Remoto / Nómada',
     analysis: 'Clientes remotos valoran <strong>productos pulidos, código limpio y capacidad de trabajar de forma autónoma</strong>.',
-    scores:  { sqlassiisten: 85, biodiversidad: 80 },
+    scores:  { sqlassiisten: 85, animeverse: 84, devsanctum: 79, biodiversidad: 80 },
     reasons: {
       sqlassiisten:  'App funcional y desplegada en producción — demuestra que terminas lo que empiezas.',
+      animeverse:    'Trabajo sostenido y documentado en el tiempo — clave para clientes que no te van a supervisar.',
+      devsanctum:    'Stack moderno (Next 16, React 19, Tailwind 4) — habla el idioma de equipos remotos actuales.',
       biodiversidad: 'Dashboard con React y Next.js — stack popular en equipos remotos modernos.'
     },
     tips: [
       'Comparte el link en vivo de sql_asiisten — los clientes remotos quieren ver el producto funcionando.',
+      'En AnimeVerse, muestra el historial de mejoras técnicas como evidencia de trabajo autónomo constante.',
       'Destaca que puedes trabajar con stack moderno sin supervisión.',
       'Agrega README claro en GitHub — los clientes remotos valoran la documentación.'
     ]
@@ -249,10 +237,12 @@ var auditClients = {
   fintech: {
     label: 'Fintech / Datos',
     analysis: 'Clientes fintech buscan <strong>rigor técnico, visualización de datos y lógica de negocio sólida</strong>.',
-    scores:  { biodiversidad: 91, sqlassiisten: 72 },
+    scores:  { biodiversidad: 91, devsanctum: 75, sqlassiisten: 72, animeverse: 68 },
     reasons: {
       biodiversidad: 'Dashboard interactivo de datos es el lenguaje nativo del mundo fintech.',
-      sqlassiisten:  'La lógica de aplicación full-stack demuestra capacidad técnica end-to-end.'
+      devsanctum:    'Arquitectura por features y base de datos con Supabase/PostgreSQL — rigor técnico visible.',
+      sqlassiisten:  'La lógica de aplicación full-stack demuestra capacidad técnica end-to-end.',
+      animeverse:    'Menos directo para fintech, pero la migración a TypeScript muestra disciplina de tipado.'
     },
     tips: [
       'Biodiversidad primero — habla directo al core del mundo datos/fintech.',
@@ -261,7 +251,7 @@ var auditClients = {
     ]
   }
 };
-// ── Helpers ─────────────────────────────────────────────────
+
 function auditResetCards() {
   document.querySelectorAll('.project-card').forEach(function (card) {
     card.classList.remove('audit-highlight', 'audit-dim');
@@ -274,7 +264,7 @@ function auditResetCards() {
   });
 }
 
-// ── Abrir / cerrar panel ─────────────────────────────────────
+
 window.openAuditor = function () {
   var banner = document.getElementById('auditorBanner');
   var panel  = document.getElementById('auditorPanel');
@@ -297,7 +287,7 @@ window.closeAuditor = function () {
   auditResetCards();
 };
 
-// ── Seleccionar cliente ──────────────────────────────────────
+
 window.selectClient = function (id) {
   document.querySelectorAll('.client-btn').forEach(function (b) { b.classList.remove('active'); });
   var activeBtn = document.querySelector('[data-id="' + id + '"]');
@@ -324,13 +314,13 @@ window.selectClient = function (id) {
       card.classList.add('audit-dim');
     }
 
-    // Badge de ranking
+
     var rankEl = document.createElement('div');
     rankEl.className = 'project-rank';
     rankEl.textContent = rankLabels[i];
     card.insertBefore(rankEl, card.firstChild);
 
-    // Barra de afinidad + nota
+
     var bar = document.createElement('div');
     bar.className = 'audit-score-bar';
     bar.innerHTML =
@@ -339,7 +329,7 @@ window.selectClient = function (id) {
       '<div class="audit-score-note">' + cd.reasons[pid] + '</div>';
     card.appendChild(bar);
 
-    // Animar barra con un pequeño delay
+
     requestAnimationFrame(function () {
       requestAnimationFrame(function () {
         var fill = bar.querySelector('.audit-score-fill');
@@ -348,13 +338,13 @@ window.selectClient = function (id) {
     });
   });
 
-  // Reordenar cards visualmente según ranking
+
   sorted.forEach(function (entry) {
     var card = grid.querySelector('[data-id="' + entry[0] + '"]');
     if (card) grid.appendChild(card);
   });
 
-  // Renderizar panel de resultados
+
   var rankHTML = sorted.map(function (entry, i) {
     var pid  = entry[0];
     var proj = auditProjects.find(function (p) { return p.id === pid; });
@@ -382,7 +372,7 @@ window.selectClient = function (id) {
   results.classList.add('show');
   extendCursorHover();
 };
-// ── Navigation Drawer (Mobile) ───────────────────────────────
+
 window.toggleDrawer = function () {
   var drawer  = document.getElementById('navDrawer');
   var overlay = document.getElementById('drawerOverlay');
@@ -404,5 +394,5 @@ window.closeDrawer = function () {
   document.body.style.overflow = '';
 };
 
-// Keep old closeMenu alias for any lingering references
+
 window.closeMenu = window.closeDrawer;
