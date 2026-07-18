@@ -1,4 +1,6 @@
-
+// ════════════════════════════════════════════════════════════
+//  CURSOR
+// ════════════════════════════════════════════════════════════
 const cursor = document.getElementById('cursor');
 const dot = cursor.querySelector('.dot');
 const ring = cursor.querySelector('.ring');
@@ -12,13 +14,17 @@ document.addEventListener('mousemove', function (e) {
 
 
 
-
+// ════════════════════════════════════════════════════════════
+//  NAVBAR
+// ════════════════════════════════════════════════════════════
 var navbar = document.getElementById('navbar');
 window.addEventListener('scroll', function () {
   navbar.classList.toggle('scrolled', window.scrollY > 50);
 });
 
 
+// ════════════════════════════════════════════════════════════
+//  SCROLL REVEAL (elementos genéricos con clase .reveal)
 // ════════════════════════════════════════════════════════════
 var revealObserver = new IntersectionObserver(function (entries) {
   entries.forEach(function (entry) {
@@ -34,7 +40,13 @@ document.querySelectorAll('.reveal').forEach(function (el) {
 });
 
 
-
+// ════════════════════════════════════════════════════════════
+//  TYPING EFFECT — Sección "Sobre mí"
+//
+//  Muestra frases distintas en un bucle infinito.
+//  Cada frase se "escribe" carácter a carácter (typeSpeed ms),
+//  espera (pauseTime ms) y luego se "borra" carácter a carácter.
+// ════════════════════════════════════════════════════════════
 var phrases = [
   'Desarrollador Frontend con alma de diseñador.',
   'Apasionado por el código limpio y la UX.',
@@ -44,14 +56,15 @@ var phrases = [
 ];
 
 var typingEl = document.getElementById('about-typing');
-var phraseIdx = 0;   
-var charIdx = 0;   
+var phraseIdx = 0;   // índice de la frase actual
+var charIdx = 0;   // índice del carácter actual dentro de la frase
 var isDeleting = false;
-var typeSpeed = 55;  
-var deleteSpeed = 28;  
-var pauseTime = 2000;
+var typeSpeed = 55;  // ms entre cada carácter al escribir
+var deleteSpeed = 28;  // ms entre cada carácter al borrar
+var pauseTime = 2000;// ms de pausa cuando la frase está completa
 
-
+// La sección debe ser visible antes de arrancar el efecto.
+// Usamos IntersectionObserver para esperar que entre al viewport.
 var typingStarted = false;
 
 var typingObserver = new IntersectionObserver(function (entries) {
@@ -69,7 +82,7 @@ function typeLoop() {
   var current = phrases[phraseIdx];
 
   if (!isDeleting) {
-  
+    // ── Escribiendo ──
     charIdx++;
     typingEl.textContent = current.slice(0, charIdx);
 
@@ -82,7 +95,7 @@ function typeLoop() {
     setTimeout(typeLoop, typeSpeed);
 
   } else {
-  
+    // ── Borrando ──
     charIdx--;
     typingEl.textContent = current.slice(0, charIdx);
 
@@ -98,7 +111,13 @@ function typeLoop() {
 }
 
 
-
+// ════════════════════════════════════════════════════════════
+//  CARDS EXPANDIBLES — Sección "Sobre mí"
+//
+//  Al hacer clic en una card se abre/cierra con la clase "open".
+//  El CSS gestiona la transición de max-height y opacidad.
+//  La primera card abre sola al cargar.
+// ════════════════════════════════════════════════════════════
 var cards = document.querySelectorAll('.acard');
 
 // Abrir la primera card automáticamente después de un momento
@@ -121,21 +140,7 @@ cards.forEach(function (card) {
 
 
 
-
-var photoInput = document.getElementById('photo-upload');
-var profileImg = document.getElementById('profile-photo');
-
-if (photoInput && profileImg) {
-  photoInput.addEventListener('change', function (e) {
-    var file = e.target.files[0];
-    if (!file) return;
-    var reader = new FileReader();
-    reader.onload = function (event) { profileImg.src = event.target.result; };
-    reader.readAsDataURL(file);
-  });
-}
-
-
+// Active nav highlight on scroll
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.bottom-nav a');
 window.addEventListener('scroll', () => {
@@ -149,7 +154,12 @@ window.addEventListener('scroll', () => {
 
 // ════════════════════════════════════════════════════════════
 //  AUDITOR DE PORTAFOLIO
+//
+//  Agrega los event listeners del cursor a los nuevos botones
+//  del auditor y gestiona toda la lógica de selección.
+// ════════════════════════════════════════════════════════════
 
+// Extender el hover del cursor a los botones del auditor
 function extendCursorHover() {
   document.querySelectorAll('.client-btn, .auditor-trigger, .auditor-close, .audit-reset').forEach(function (el) {
     el.addEventListener('mouseenter', function () { document.body.classList.add('hovering'); });
@@ -157,7 +167,7 @@ function extendCursorHover() {
   });
 }
 
-
+// ── Datos de proyectos ──────────────────────────────────────
 var auditProjects = [
   { id: 'biodiversidad', name: 'Biodiversidad' },
   { id: 'sqlassiisten',  name: 'sql_asiisten' },
@@ -251,7 +261,7 @@ var auditClients = {
     ]
   }
 };
-
+// ── Helpers ─────────────────────────────────────────────────
 function auditResetCards() {
   document.querySelectorAll('.project-card').forEach(function (card) {
     card.classList.remove('audit-highlight', 'audit-dim');
@@ -264,7 +274,7 @@ function auditResetCards() {
   });
 }
 
-
+// ── Abrir / cerrar panel ─────────────────────────────────────
 window.openAuditor = function () {
   var banner = document.getElementById('auditorBanner');
   var panel  = document.getElementById('auditorPanel');
@@ -287,7 +297,7 @@ window.closeAuditor = function () {
   auditResetCards();
 };
 
-
+// ── Seleccionar cliente ──────────────────────────────────────
 window.selectClient = function (id) {
   document.querySelectorAll('.client-btn').forEach(function (b) { b.classList.remove('active'); });
   var activeBtn = document.querySelector('[data-id="' + id + '"]');
@@ -314,13 +324,13 @@ window.selectClient = function (id) {
       card.classList.add('audit-dim');
     }
 
-
+    // Badge de ranking
     var rankEl = document.createElement('div');
     rankEl.className = 'project-rank';
     rankEl.textContent = rankLabels[i];
     card.insertBefore(rankEl, card.firstChild);
 
-
+    // Barra de afinidad + nota
     var bar = document.createElement('div');
     bar.className = 'audit-score-bar';
     bar.innerHTML =
@@ -329,7 +339,7 @@ window.selectClient = function (id) {
       '<div class="audit-score-note">' + cd.reasons[pid] + '</div>';
     card.appendChild(bar);
 
-
+    // Animar barra con un pequeño delay
     requestAnimationFrame(function () {
       requestAnimationFrame(function () {
         var fill = bar.querySelector('.audit-score-fill');
@@ -338,13 +348,13 @@ window.selectClient = function (id) {
     });
   });
 
-
+  // Reordenar cards visualmente según ranking
   sorted.forEach(function (entry) {
     var card = grid.querySelector('[data-id="' + entry[0] + '"]');
     if (card) grid.appendChild(card);
   });
 
-
+  // Renderizar panel de resultados
   var rankHTML = sorted.map(function (entry, i) {
     var pid  = entry[0];
     var proj = auditProjects.find(function (p) { return p.id === pid; });
@@ -372,7 +382,7 @@ window.selectClient = function (id) {
   results.classList.add('show');
   extendCursorHover();
 };
-
+// ── Navigation Drawer (Mobile) ───────────────────────────────
 window.toggleDrawer = function () {
   var drawer  = document.getElementById('navDrawer');
   var overlay = document.getElementById('drawerOverlay');
@@ -394,5 +404,5 @@ window.closeDrawer = function () {
   document.body.style.overflow = '';
 };
 
-
+// Keep old closeMenu alias for any lingering references
 window.closeMenu = window.closeDrawer;

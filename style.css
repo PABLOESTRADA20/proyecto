@@ -667,35 +667,6 @@ section {
   }
 }
 
-.upload-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0.5rem 1.2rem;
-  border: 1px dashed rgba(166, 9, 9, 0.4);
-  border-radius: 8px;
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  color: var(--muted);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.upload-btn:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-.upload-hint {
-  display: block;
-  margin-top: 6px;
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  color: var(--muted);
-  opacity: 0.6;
-  text-align: center;
-}
-
 /* — CARDS EXPANDIBLES — */
 .about-cards {
   display: flex;
